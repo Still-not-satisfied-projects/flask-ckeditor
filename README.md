@@ -29,7 +29,7 @@ The best web text editor for everyone<br/>
 
 ### 集成
 #### 1. 在希望集成的html头部引入js文件
-<head><script src="{{url_for('static', filename='ckeditor/ckeditor.js')}}"></script></head><br/>
+<script src="{{url_for('static', filename='ckeditor/ckeditor.js')}}"></script><br/>
 
 #### 2. 将被替换的表单的class属性设为ckeditor,添加替换脚本
 
