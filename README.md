@@ -28,50 +28,51 @@ The best web text editor for everyone<br/>
     pip install flaskckeditor
 
 #### 集成
-
-    1. 在希望集成的html头部引入js文件
+1. 在希望集成的html头部引入js文件
+    
     <head>
         <script src="{{url_for('static', filename='ckeditor/ckeditor.js')}}"></script>
     </head>
 
-    2. 将被替换的表单的class属性设为ckeditor,添加替换脚本
+2. 将被替换的表单的class属性设为ckeditor,添加替换脚本
 
-        <form method="post">
-            {{ form.hidden_tag() }}
-            {{ form.ckeditor_demo(class='ckeditor') }}
-            <!-- 替换脚本
-            <script type="text/javascript">
-               CKEDITOR.replace(
-                   "ckeditor_demo", {
-                       filebrowserUploadUrl: '/ckupload/'
-                   }
-               );
-            </script>
-            -->
-            {{ form.submit }}
-        <form>
 
-    3. 开启上传（图片、文件）接口
+    <form method="post">
+        {{ form.hidden_tag() }}
+        {{ form.ckeditor_demo(class='ckeditor') }}
+        <!-- 替换脚本 -->
+        <script type="text/javascript">
+            CKEDITOR.replace(
+                "ckeditor_demo", {
+                    filebrowserUploadUrl: '/ckupload/'
+                }
+            );
+        </script>
+        <!---->
+        {{ form.submit }}
+    <form>
 
-    3.1: 在表单类中集成 CKEditor 类
+3. 开启上传（图片、文件）接口
+3.1: 在表单类中集成 CKEditor 类
 
-        from flaskckeditor import CKEditor
-        from flask.ext.wtf import Form
-        from wtforms import TextAreaField, SubmitField
 
-        class EditForm(Form, CKEditor):
-            ckeditor_demo = TextAreaField()
-            submit = SubmitField('提交')
+    from flaskckeditor import CKEditor
+    from flask.ext.wtf import Form
+    from wtforms import TextAreaField, SubmitField
+    ......
+    class EditForm(Form, CKEditor):
+        ckeditor_demo = TextAreaField()
+        submit = SubmitField('提交')
 
-    3.2: 上传路由
+3.2: 上传路由
 
-        @app.route('/ckupload/')
-        def ckupload():
-            form = EditForm()
-            response = form.upload(endpoint=app)
-            return response
+    @app.route('/ckupload/')
+    def ckupload():
+        form = EditForm()
+        response = form.upload(endpoint=app)
+        return response
 
-    现在访问对应html的路由，你会看到漂亮的CKEditor编辑器，并且可以使用它上传文件和图片：）
+现在访问对应html的路由，你会看到漂亮的CKEditor编辑器，并且可以使用它上传文件和图片：）
 
 ## API
 
