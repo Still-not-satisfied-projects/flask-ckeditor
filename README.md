@@ -17,23 +17,21 @@ The best web text editor for everyone<br/>
 
 ## 使用
 
-#### 准备
+### 准备
 
     1. clone 这个仓库到本地
     2. 将 ckeditor 目录放置在 flask 项目的 static 目录下
     3. 在 static 目录下建立 upload 目录
 
-#### 安装
+### 安装
 
     pip install flaskckeditor
 
-#### 集成
-1. 在希望集成的html头部引入js文件
-    
-    <head><script src="{{url_for('static', filename='ckeditor/ckeditor.js')}}"></script></head>
+### 集成
+#### 1. 在希望集成的html头部引入js文件
+<head><script src="{{url_for('static', filename='ckeditor/ckeditor.js')}}"></script></head><br/>
 
-2. 将被替换的表单的class属性设为ckeditor,添加替换脚本
-
+#### 2. 将被替换的表单的class属性设为ckeditor,添加替换脚本
 
     <form method="post">
         {{ form.hidden_tag() }}
@@ -50,9 +48,8 @@ The best web text editor for everyone<br/>
         {{ form.submit }}
     <form>
 
-3. 开启上传（图片、文件）接口
+#### 3. 开启上传（图片、文件）接口
 3.1: 在表单类中集成 CKEditor 类
-
 
     from flaskckeditor import CKEditor
     from flask.ext.wtf import Form
