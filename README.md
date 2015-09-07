@@ -15,6 +15,7 @@ The best web text editor for everyone<br/>
 ## flask-ckeditor
 双剑合并，😄
 
+
 ## 使用
 
 ### 准备
@@ -23,9 +24,11 @@ The best web text editor for everyone<br/>
     2. 将 ckeditor 目录放置在 flask 项目的 static 目录下
     3. 在 static 目录下建立 upload 目录
 
+
 ### 安装
 
     pip install flaskckeditor
+
 
 ### 集成
 #### 1. 在希望集成的html头部引入js文件
@@ -68,7 +71,33 @@ The best web text editor for everyone<br/>
         response = form.upload(endpoint=app)
         return response
 
-现在访问对应html的路由，你会看到漂亮的CKEditor编辑器，并且可以使用它上传文件和图片：）
+现在访问对应html的路由，你会看到漂亮的CKEditor编辑器，并且可以使用它上传文件和图片：）<br/>
+具体可参见示例程序: examples/app<br/>
+
+### 使用蓝本
+在大型应用中经常会使用蓝本，在蓝本视图中集成CKEditor的步骤和app视图基本相同。
+#### 1. 创建蓝本时需指明蓝本static目录的绝对路径
+
+    demo = Blueprint('demo', static_folder="/path/to/static")
+
+#### 2. 对应url需加上蓝本端点
+
+    <script src="{{url_for('.static', filename='ckeditor/ckeditor.js')}}"></script>
+
+    <script type="text/javascript">
+        CKEDITOR.replace(
+            "ckeditor_demo", {
+                filebrowserUploadUrl: './ckupload/'
+            }
+        );
+    </script>
+
+#### 3. 设置endpoint端点值
+
+    response = form.upload(endpoint=demo)
+
+具体可参见示例程序: examples/blueprint
+
 
 ## API
 
