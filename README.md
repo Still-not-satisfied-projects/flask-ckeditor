@@ -1,6 +1,6 @@
 flask-ckeditor
 ===
-### 在flask中快速集成ckeditor编辑器
+### flask后台快速集成ckeditor编辑器
 
 ## flask
 一个轻量、可扩展、强大的python web 框架<br/>
