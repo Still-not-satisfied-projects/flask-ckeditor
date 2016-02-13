@@ -1,0 +1,5 @@
+**/*.pyc
+-1
+dist/
+flaskckeditor.egg-info/
+venv/

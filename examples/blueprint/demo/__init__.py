@@ -9,8 +9,9 @@ import sys
 
 
 demo = Blueprint(
-    'demo', __name__, static_folder="/path/to/static",
-    template_folder = "/path/to/templates"
+    'demo',
+    __name__,
+    static_folder = '/Users/apple/hack/flask-ckeditor/examples/blueprint/static'
 )
 
 
