@@ -15,6 +15,9 @@ The best web text editor for everyone<br/>
 ## flask-ckeditor
 双剑合并，😄
 
+## demo
+网址: <br/>
+code: <br/>
 
 ## 使用
 
