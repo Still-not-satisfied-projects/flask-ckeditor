@@ -5,10 +5,9 @@
     flask-ckeditor
     ~~~~~~~~~~~~~~
 
-        在flask中集成ckeditor编辑器
+        a flask module for CKEditor integration
 """
 
-# from flask import what I  want
 from flask import request, url_for, make_response
 import os
 import random
@@ -31,22 +30,24 @@ class CKEditor(object):
             body = TextareaField()
             submit = SubmitField('submit')
 
-        @app.route('/ckupload/', methods=['OPTIONS', 'POST'])
+        @app.route('/ckupload/', methods=['POST'])
         def ckupload():
             # 实现上传接口
             form = EditForm()
-            form.upload(endpoint=app)
+            response = form.upload(endpoint=app)
+            return response
+
     """
     def __init__(self):
         pass
 
     def gen_rnd_filename(self):
-        """依据上传日期生成随机文件名"""
+        """generate a random filename"""
         filename_prefix = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
-        return "%s%s" % (filename_prefix, str(random.randrange(1000,10000)))
+        return "%s%s" % (filename_prefix, str(random.randrange(1000, 10000)))
 
     def upload(self, endpoint=None):
-        """CKEditor 文件(图片、文档) 上传"""
+        """img or file upload methods"""
         error = ''
         url = ''
         callback = request.args.get("CKEditorFuncNum")
@@ -59,7 +60,6 @@ class CKEditor(object):
 
             filepath = os.path.join(endpoint.static_folder, 'upload', rnd_name)
 
-            # 检查路径是否存在，不存在则创建
             dirname = os.path.dirname(filepath)
             if not os.path.exists(dirname):
                 try:
