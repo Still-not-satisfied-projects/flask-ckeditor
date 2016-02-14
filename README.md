@@ -3,8 +3,8 @@ Flask-CKEditor
 a [flask](https://github.com/mitsuhiko/flask) module for [CKEditor](http://ckeditor.com) integration
 
 ## Demo
-### demo =>
-### code =>
+### demo => http://115.28.152.113:520/appDemo/
+### code => https://github.com/neo1218/flask-ckeditor-demo
 
 ## Basic Usage
 
