@@ -47,14 +47,30 @@ a [flask](https://github.com/mitsuhiko/flask) module for [CKEditor](http://ckedi
 
     @app.route("/ckupload/")
     def ckupload():
-        form = CKEditor()
+        form = CKEditorForm()
         res = form.upload(endpoint=app)
         return res
 
 ### Situation 3: Use Blueprint
+You need to pay attention to the following points:<br/>
+1. Blueprint <code>static_folder</code> property should be the **absolute path** leading to the static folder
 
-1. 配置蓝图的static_folder
-2. 修改上传路由
+    blue = Blueprint(
+        'blue',
+        __name__,
+        static_folder = '/abspath/to/static/'
+    )
+
+2. Endpoint parameter of upload function should be <code>the blueprint
+   name</code>
+
+    from "forms_module" import CKEditorForm
+
+    @blue.route("/ckupload/")
+    def ckupload():
+        form = CKEditorForm()
+        res = form.upload(endpoint=blue)
+        return res
 
 ### API
 #### :class: CKEditor
