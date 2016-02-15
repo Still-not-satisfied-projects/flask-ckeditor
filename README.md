@@ -61,8 +61,7 @@ You need to pay attention to the following points:<br/>
         static_folder = '/abspath/to/static/'
     )
 
-2. Endpoint parameter of upload function should be <code>the blueprint
-   name</code>
+2. Endpoint parameter of upload function should be <code>the blueprint name</code>
 
     from "forms_module" import CKEditorForm
 
