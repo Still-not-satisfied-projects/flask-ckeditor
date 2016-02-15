@@ -30,10 +30,26 @@ a [flask](https://github.com/mitsuhiko/flask) module for [CKEditor](http://ckedi
     </form>
 
 ### Situation 2: Open (file/img)Upload Interface
-#### Step1: 下载并配置CKEditor编辑器
-#### Step2: 编写表单(以flask-wtf为例)
-#### Step3: 将表单替换为CKEditor编辑器
-#### Step4: 编写上传路由
+#### Step1: Upload Class Inheritance
+
+    from flask_wtf import Form
+    from wtforms import TextAreaField, SubmitField, StringField
+    from flaskckeditor import CKEditor
+
+    class CKEditorForm(Form, CKEditor):
+        title =  StringField()
+        ckdemo = TextAreaField()
+        submit = SubmitField('submit')
+
+#### Step2: Write Upload View Function
+
+    from "forms_module" import CKEditorForm
+
+    @app.route("/ckupload/")
+    def ckupload():
+        form = CKEditor()
+        res = form.upload(endpoint=app)
+        return res
 
 ### Situation 3: Use Blueprint
 
