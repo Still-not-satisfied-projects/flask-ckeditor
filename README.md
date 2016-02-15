@@ -53,7 +53,7 @@ a [flask](https://github.com/mitsuhiko/flask) module for [CKEditor](http://ckedi
 
 ### Situation 3: Use Blueprint
 You need to pay attention to the following points:<br/>
-1. Blueprint <code>static_folder</code> property should be the **absolute path** leading to the static folder
+1.Blueprint <code>static_folder</code> property should be the **absolute path** leading to the static folder
 
     blue = Blueprint(
         'blue',
@@ -62,7 +62,7 @@ You need to pay attention to the following points:<br/>
     )
 
 
-2. Endpoint parameter of upload function should be <code>the blueprint name</code>
+2.Endpoint parameter of upload function should be <code>the blueprint name</code>
 
     from "forms_module" import CKEditorForm
 
