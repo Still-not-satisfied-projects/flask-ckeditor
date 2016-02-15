@@ -7,7 +7,7 @@ a [flask](https://github.com/mitsuhiko/flask) module for [CKEditor](http://ckedi
 #### code => https://github.com/neo1218/flask-ckeditor-demo
 
 ### Situation 1: Basic Usage
-#### Step1: Clone the [CKEditor](https://github.com/neo1218/Configured-CKEditor) I Have Configured.
+#### Step1: Clone the [CKEditor](https://github.com/neo1218/Configured-CKEditor) I Have Configured and Put it Under Static Folder
 #### Step2: Writing Forms(In Flask-WTF Case)
 
     from flask_wtf import Form
