@@ -73,11 +73,12 @@ You need to pay attention to the following points:<br/>
         return res
 
 ### API
-#### :class: CKEditor
-#### :func: gen_rnd_file()
-#### :func: upload()
+:class: CKEditor <br/>
+    \_:function: gen_rnd_filename() <br/>
+        \_ generate random filename <br/>
+    \_:function: upload(endpoint=) <br/>
+        \_ for upload
 
 ### LICENSE
 MIT: check [LICENSE](https://github.com/neo1218/flask-ckeditor/blob/master/LICENSE) for more detail
 
-### Thanks
