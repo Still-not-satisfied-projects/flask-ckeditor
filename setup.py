@@ -13,7 +13,7 @@ from setuptools import setup
 
 setup(
     name='flaskckeditor',
-    version='1.5',
+    version='1.6',
     url='https://github.com/neo1218/flask-ckeditor',
     license='MIT',
     author='neo1218',
