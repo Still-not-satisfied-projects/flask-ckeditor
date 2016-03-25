@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Content -->
+<div id='content'>
+    <div class='panel panel-default'>
+        <div class='panel-heading'>
+            <i class='icon-edit icon-large'></i>
+            APP Demo
+        </div>
+        <div class='panel-body'>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.title(class='form-control', placeholder='appDemo', type='text') }}
+                {{ form.ckdemo(class='ckeditor') }}
+                <script type="text/javascript">
+                    CKEDITOR.replace("ckdemo", {
+                        filebrowserUploadUrl: '/ckupload/',
+                        filebrowserImageUploadUrl: '/ckupload/'
+                    });
+                </script>
+                {{ form.submit(class="btn btn-default") }}
+            </form>
+        </div>
+    </div>
+{% endblock %}

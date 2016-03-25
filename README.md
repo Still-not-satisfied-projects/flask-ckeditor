@@ -11,6 +11,9 @@
 + [**BlueprintDemo1**]()
 + [**BlueprintDemo2**]()
 
+## Install
+$ pip install flask-ckeditor
+
 ## LICENSE
 
     (The WTFPL)

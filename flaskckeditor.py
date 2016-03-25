@@ -1,11 +1,10 @@
-#!/usr/bin/env python
 # encoding: utf-8
 
 """
     flask-ckeditor
     ~~~~~~~~~~~~~~
 
-        a flask module for CKEditor integration
+        Flask love CKEditor
 """
 
 from flask import request, url_for, make_response
@@ -32,7 +31,6 @@ class CKEditor(object):
 
         @app.route('/ckupload/', methods=['POST'])
         def ckupload():
-            # 实现上传接口
             form = EditForm()
             response = form.upload(endpoint=app)
             return response
@@ -53,7 +51,6 @@ class CKEditor(object):
         callback = request.args.get("CKEditorFuncNum")
 
         if request.method == 'POST' and 'upload' in request.files:
-            # /static/upload
             fileobj = request.files['upload']
             fname, fext = os.path.splitext(fileobj.filename)
             rnd_name = '%s%s' % (self.gen_rnd_filename(), fext)
@@ -65,9 +62,9 @@ class CKEditor(object):
                 try:
                     os.makedirs(dirname)
                 except:
-                    error = 'ERROR_CREATE_DIR'
+                    error = 'path <%s> not exist!' % filepath
             elif not os.access(dirname, os.W_OK):
-                error = 'ERROR_DIR_NOT_WRITEABLE'
+                error = 'path <%s> not writable' % filepath
             if not error:
                 fileobj.save(filepath)
                 url = url_for('.static', filename='%s/%s' % ('upload', rnd_name))
