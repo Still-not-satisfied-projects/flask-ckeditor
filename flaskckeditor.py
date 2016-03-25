@@ -67,7 +67,7 @@ class CKEditor(object):
                 except:
                     error = 'ERROR_CREATE_DIR'
             elif not os.access(dirname, os.W_OK):
-                    error = 'ERROR_DIR_NOT_WRITEABLE'
+                error = 'ERROR_DIR_NOT_WRITEABLE'
             if not error:
                 fileobj.save(filepath)
                 url = url_for('.static', filename='%s/%s' % ('upload', rnd_name))
@@ -83,3 +83,4 @@ class CKEditor(object):
         response = make_response(res)
         response.headers["Content-Type"] = "text/html"
         return response
+
