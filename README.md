@@ -1,8 +1,8 @@
+![demo](http://7xj431.com1.z0.glb.clouddn.com/demo)
+
 # Flask-CKEditor
 
 > CKEditor integrated in Flask
-
-![talk](http://7xj431.com1.z0.glb.clouddn.com/talk.jpeg)
 
 <hr/>
 
