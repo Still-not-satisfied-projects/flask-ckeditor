@@ -1,15 +1,15 @@
 # Flask-CKEditor
 
-> Flask-CKEditor
+> CKEditor integrated in Flask
 
 ![talk](http://7xj431.com1.z0.glb.clouddn.com/talk.jpeg)
 
 <hr/>
 
-## Features
-+ **secure filename**
+## Improved Features
++ **secure random filename**
 + **custom upload path**
-+ **simple**
++ **simple to use upload interface**
 
 ## Examples
 + [**AppDemo**]()

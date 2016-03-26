@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for
 from .forms import CKEditorForm
 
 
-@app.route('/appDemo/', methods=['POST', 'GET'])
+@app.route('/appdemo/', methods=['GET', 'POST'])
 def appDemo():
     """demo view"""
     form = CKEditorForm()
@@ -13,7 +13,7 @@ def appDemo():
     return render_template('demo.html', form=form)
 
 
-@app.route('/ckupload/', methods=['POST', 'OPTIONS'])
+@app.route('/ckupload/', methods=['POST'])
 def ckupload():
     """file/img upload interface"""
     form = CKEditorForm()
