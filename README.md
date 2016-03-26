@@ -12,7 +12,7 @@
 + [**BlueprintDemo2**]()
 
 ## Install
-$ pip install flask-ckeditor
+$ pip install flaskckeditor
 
 ## LICENSE
 
