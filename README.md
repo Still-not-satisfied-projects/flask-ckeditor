@@ -1,10 +1,15 @@
-# Talk is Cheap, Show Me Your Code !!!
+# Flask-CKEditor
 
 > Flask-CKEditor
 
 ![talk](http://7xj431.com1.z0.glb.clouddn.com/talk.jpeg)
 
 <hr/>
+
+## Features
++ **secure filename**
++ **custom upload path**
++ **simple**
 
 ## Examples
 + [**AppDemo**]()
