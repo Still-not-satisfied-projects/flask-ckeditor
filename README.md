@@ -12,7 +12,7 @@
 + **simple to use upload interface**
 
 ## Examples
-+ [**AppDemo**]()
++ [**AppDemo**](https://github.com/neo1218/flask-ckeditor/tree/master/examples/app)
 + [**BlueprintDemo1**]()
 + [**BlueprintDemo2**]()
 

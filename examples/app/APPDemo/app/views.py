@@ -17,6 +17,6 @@ def appDemo():
 def ckupload():
     """file/img upload interface"""
     form = CKEditorForm()
-    response = form.upload(endpoint=app)
+    response = form.upload(name=app)
     return response
 

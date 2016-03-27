@@ -20,7 +20,7 @@ class CKEditor(object):
     ~~~~~~~~~~~~~~
 
         from flask import Flask
-        from flask.ext.ckeditor import CKEditor
+        from flaskckeditor import CKEditor
         from flask.ext.wtf import Form
         from wtforms import SubmitField, TextareaField
 
@@ -33,29 +33,27 @@ class CKEditor(object):
         @app.route('/ckupload/', methods=['POST'])
         def ckupload():
             form = EditForm()
-            response = form.upload(endpoint=app)
+            response = form.upload(name=app)
             return response
 
     """
     def __init__(self):
+        """nothing to init"""
         pass
 
     def gen_rnd_filename(self):
-        """generate a random filename"""
+        """generate a random filename by time"""
         filename_prefix = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
         return "%s%s" % (filename_prefix, str(random.randrange(1000, 10000)))
 
-    def upload(self, endpoint=None, path=None, folder='upload',\
+    def upload(self, name=None, path=None, folder='upload',\
             allowed_extensions=None, max_size=None):
         """
-        img or file upload methods
-        endpoint: 调用的端点
-        path: 自定义上传路径, 然后该路径会被写入flask的规则
-        folder: 自定义上传文件夹的名字, 默认是'upload'
-        allowed_extensions: 允许上传的文件扩展名集合
-        max_size: 允许上传的文件的最大大小
-        现在的问题就是POST的url有问题: So How 2 solve it
-        /undefined: 从来没见过这种错误!
+        ckeditor upload method
+        :name: the app name or blueprint name
+        :path: the upload path
+        :allowed_extensions: allowed file extensions
+        :max_size: the max size of uploaded file
         """
         error = ''
         url = ''
@@ -70,7 +68,7 @@ class CKEditor(object):
             rnd_name = '%s%s' % (self.gen_rnd_filename(), fext)
 
             if not path:
-                filepath = os.path.join(endpoint.static_folder, 'upload', rnd_name)
+                filepath = os.path.join(name.static_folder, 'upload', rnd_name)
             else:
                 filepath = path
                 app.add_url_rule('/ckupload/<filename>', 'uploaded_file',
@@ -98,7 +96,7 @@ class CKEditor(object):
 
         res = """
                 <script type="text/javascript">
-                window.parent.CKEDITOR.tools.callFunction(%s, '%s', '%s');
+                    window.parent.CKEDITOR.tools.callFunction('%s', '%s', '%s');
                 </script>
              """ % (callback, url, error)
 
