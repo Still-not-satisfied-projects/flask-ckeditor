@@ -3,3 +3,5 @@
 dist/
 flaskckeditor.egg-info/
 venv/
+tests/
+exts/

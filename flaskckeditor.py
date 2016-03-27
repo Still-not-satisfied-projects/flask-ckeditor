@@ -47,7 +47,16 @@ class CKEditor(object):
 
     def upload(self, endpoint=None, path=None, folder='upload',\
             allowed_extensions=None, max_size=None):
-        """img or file upload methods"""
+        """
+        img or file upload methods
+        endpoint: 调用的端点
+        path: 自定义上传路径, 然后该路径会被写入flask的规则
+        folder: 自定义上传文件夹的名字, 默认是'upload'
+        allowed_extensions: 允许上传的文件扩展名集合
+        max_size: 允许上传的文件的最大大小
+        现在的问题就是POST的url有问题: So How 2 solve it
+        /undefined: 从来没见过这种错误!
+        """
         error = ''
         url = ''
         callback = request.args.get("CKEditorFuncNum")
