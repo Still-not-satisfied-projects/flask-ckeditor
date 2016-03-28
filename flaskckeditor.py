@@ -87,10 +87,11 @@ class CKEditor(object):
                 error = 'path <%s> not writable' % filepath
             if not error:
                 fileobj.save(filepath)
-                if not path:
-                    url = url_for('.static', filename='%s/%s' % (folder, rnd_name))
-                else:
-                    url = url_for('.uploaded_file', filename='%s/%s' % (folder, rnd_name))
+                url = url_for('.static', filename='%s/%s' % ('upload', rnd_name))
+                # if not path:
+                #     url = url_for('.static', filename='%s/%s' % (folder, rnd_name))
+                # else:
+                #     url = url_for('.uploaded_file', filename='%s/%s' % (folder, rnd_name))
         else:
             error = 'post error'
 

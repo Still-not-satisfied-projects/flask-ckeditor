@@ -4,12 +4,12 @@ from flask import render_template, redirect, url_for
 from .forms import CKEditorForm
 
 
-@app.route('/appdemo/', methods=['GET', 'POST'])
+@app.route('/appdemo/', methods=['GET'])
 def appDemo():
     """demo view"""
     form = CKEditorForm()
-    if form.validate_on_submit():
-        return redirect(url_for('appDemo'))
+    # if form.validate_on_submit():
+    #     return redirect(url_for('appDemo'))
     return render_template('demo.html', form=form)
 
 
