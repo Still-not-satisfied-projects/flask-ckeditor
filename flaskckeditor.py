@@ -65,6 +65,7 @@ class CKEditor(object):
             if allowed_extensions and \
                 fext not in allowed_extensions:
                     error = '%s not in the allowed extensions!' % fext
+                    return error
             rnd_name = '%s%s' % (self.gen_rnd_filename(), fext)
 
             if not path:
