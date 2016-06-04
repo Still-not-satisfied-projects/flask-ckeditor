@@ -21,7 +21,7 @@ class CKEditor(object):
 
         from flask import Flask
         from flaskckeditor import CKEditor
-        from flask.ext.wtf import Form
+        from flask_wtf import Form
         from wtforms import SubmitField, TextareaField
 
         app = Flask(__name__)
